@@ -93,7 +93,7 @@ function StarRating({ rating = 0 }: { rating?: number }) {
 function BookCover({ book }: { book: Book }) {
   return (
     <div className="group relative w-32 sm:w-36 md:w-40">
-      <div className="relative aspect-[2/3] w-full overflow-hidden rounded-md shadow-lg">
+      <div className="relative aspect-2/3 w-full overflow-hidden rounded-md shadow-lg">
         <Image
           src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`}
           alt={`${book.title} cover`}
