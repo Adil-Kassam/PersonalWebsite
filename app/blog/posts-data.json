@@ -1,0 +1,38 @@
+[
+  {
+    "metadata": {
+      "title": "Lessons from my Placement Year at Glue Reply: Part 1",
+      "publishedAt": "2025-03-30",
+      "summary": "Discover lessons I gained through experiences when working on projects in my placement year."
+    },
+    "slug": "lesson1",
+    "content": "I’ve recently passed the halfway point of my placement year at Glue Reply, and wanted to share some insights I’ve gained so far, bit by bit. \n\nPlacement Tip #1\n\nProactivity is crucial - Coming from an academic background, it’s easy to default to work and opportunities being handed to you on a plate, but in reality the best ones come from showing an active interest and *getting stuck in* \n\n~ An anecdote: \n\nSpeaking up on my second ever Standup call got me involved in a website redevelopment project in React, helped me to meet and work with lots of new people within my company, and also gave me an opportunity to display ownership and present the new website live in our company meeting at the end of the month! \n\nPrior to this project I had been more backend-focused at uni (Django, Java, etc.), however I didn’t allow this to be a limiting factor and volunteered myself anyway. Interestingly it was through getting involved here that I was able to broaden my horizons and get a better understanding of Front-end development. \n\nWas it tricky at first? Of course, this is the case with most things. However, that aspect is arguably the most important, as the relief and feeling of accomplishment after solving a bug or implementing a feature is unmatched. \n\nMy advice - don’t let the difficulty of a task prevent you from harvesting the rewards of the possible growth it can grant you."
+  },
+  {
+    "metadata": {
+      "title": "Lessons from my Placement Year at Glue Reply: Part 2",
+      "publishedAt": "2025-04-27",
+      "summary": "Discover lessons I gained through experiences when working on projects in my placement year."
+    },
+    "slug": "lesson2",
+    "content": "Placement Tip #2\n\nThe Importance of Communication:\n\nThis is a skill that impacts almost every part of a role. You could even argue that it’s just as important as technical expertise.\n\nHere are a few places where it really makes a difference: \n\nCommunication with clients - Whether it’s an incident in Production or a new feature, this one is essential to prioritise. Give regular updates. Surface risks early so you can plan for them. If concerns arise, don’t deflect or take things personally. Instead, schedule time to listen and think about how to improve for next time. Don’t underestimate a simple “please” and “thank you”, it matters more than you think.\n\nCommunication with your team - Break down technical blockers clearly. Summarise what steps you’ve already taken and what you've found in a document before asking for help, this saves a lot of time. If you feel there’s a lot on your plate, reach out early and ask for help in prioritising. Delegation is far easier than failing to deliver and dealing with the fallout.\n\nCollecting Feedback - This is where the growth happens. Reach out regularly for feedback from your team and your manager, they all probably made the same mistakes once upon a time and are more than happy to share what they’ve learnt from their own experiences.\n\n\nUniversity offers some of these insights through group projects, but real-world communication goes deeper. Good news is it doesn’t take long to learn. Don’t be daunted, just use these as a starting point and build from there!"
+  },
+  {
+    "metadata": {
+      "title": "Under Development: I installed Linux on my 2014 MacBook Air and made it into a homelab",
+      "publishedAt": "2026-09-19",
+      "summary": "After half a decade lying abandoned in a box, I dusted off my old daily driver and called it up to service once again..."
+    },
+    "slug": "personalcloud",
+    "content": ""
+  },
+  {
+    "metadata": {
+      "title": "Reflections from my Placement year",
+      "publishedAt": "2025-09-15",
+      "summary": "Reflections from the past year."
+    },
+    "slug": "reflections",
+    "content": "I recently completed my placement year internship at Glue Reply and I wanted to take a moment to reflect and appreciate all the amazing experiences it granted me.\n\nOver the past year, I’ve had the opportunity to:\n<li>\n Work on real-world projects spanning front-end development, backend microservices, and API integrations.\n</li>\n<li> \nCollaborate directly with clients to clarify requirements, solve production issues, and ship solutions at scale.\n</li>\n<li> \nBuild a production-ready Django microservice to support AI assistant features.\n</li>\n<li> \nImprove features of existing services such as significantly reducing log retrieval time for support investigations\n</li>\n\nBeyond the technical skills, I’ve learned a lot about teamwork and effective time management, problem-solving under pressure, and the importance of clear communication when working with both technical and non-technical stakeholders. \n\nA huge thank you to my colleagues, friends and mentors at Glue Reply for the support, guidance, and trust throughout the year, I’ve grown immensely both as an engineer and a professional.\n\nExcited to apply what I’ve learnt when I return to King’s College London to complete my degree in a far better position than this time last year, and to see where the next chapter of my journey takes me!"
+  }
+]

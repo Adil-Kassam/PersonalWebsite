@@ -27,7 +27,12 @@ export async function generateMetadata({
     publishedAt: publishedTime,
     summary: description,
     image,
-  } = post.metadata
+  } = post.metadata as {
+    title: string
+    publishedAt: string
+    summary: string
+    image?: string
+  }
   let ogImage = image
     ? image
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`
@@ -46,13 +51,7 @@ export async function generateMetadata({
           url: ogImage,
         },
       ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [ogImage],
-    },
+    }
   }
 }
 
