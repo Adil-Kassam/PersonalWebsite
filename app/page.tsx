@@ -4,12 +4,12 @@ import { BlogPosts } from 'app/components/posts'
 export default function Page() {
   return (
     <section>
-      <div className="relative w-full aspect-4/3 sm:aspect-16/9 md:aspect-21/9 mb-8 -mt-2 rounded-xl overflow-hidden">
+      <div className="relative w-full aspect-video sm:aspect-16/9 md:aspect-21/9 mb-8 -mt-2 rounded-xl overflow-hidden bg-neutral-900">
         <Image
           src="/adillandscape3.png"
           alt="A wide banner image"
           fill
-          className="object-cover"
+          className="object-contain sm:object-cover"
           priority
         />
       </div>
