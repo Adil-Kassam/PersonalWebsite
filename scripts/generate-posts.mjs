@@ -1,5 +1,13 @@
 import fs from 'fs'
 import path from 'path'
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeRaw from 'rehype-raw'
+import rehypeSlug from 'rehype-slug'
+import rehypeStringify from 'rehype-stringify'
+import { highlight } from 'sugar-high'
+import { visit } from 'unist-util-visit'
 
 const postsDir = path.join(process.cwd(), 'app', 'blog', 'posts')
 const outputPath = path.join(process.cwd(), 'app', 'blog', 'posts-data.json')
@@ -22,15 +30,48 @@ function parseFrontmatter(fileContent) {
     return { metadata, content }
 }
 
-const mdxFiles = fs.readdirSync(postsDir).filter((file) => path.extname(file) === '.mdx')
+// Highlight code blocks at build time using sugar-high
+function highlightCodeBlocks() {
+    return (tree) => {
+        visit(tree, 'element', (node) => {
+            if (node.tagName === 'code' && node.children?.[0]?.type === 'text') {
+                const codeText = node.children[0].value
+                const highlighted = highlight(codeText)
+                node.children = [{ type: 'raw', value: highlighted }]
+            }
+        })
+    }
+}
 
-const posts = mdxFiles.map((file) => {
-    const rawContent = fs.readFileSync(path.join(postsDir, file), 'utf-8')
-    const { metadata, content } = parseFrontmatter(rawContent)
-    const slug = path.basename(file, path.extname(file))
+async function compileMarkdown(markdown) {
+    const file = await unified()
+        .use(remarkParse)
+        .use(remarkRehype, { allowDangerousHtml: true })
+        .use(rehypeRaw)
+        .use(rehypeSlug)
+        .use(highlightCodeBlocks)
+        .use(rehypeStringify, { allowDangerousHtml: true })
+        .process(markdown)
 
-    return { metadata, slug, content }
-})
+    return String(file)
+}
 
-fs.writeFileSync(outputPath, JSON.stringify(posts, null, 2))
-console.log(`✓ Generated posts-data.json with ${posts.length} posts`)
+async function main() {
+    const mdxFiles = fs.readdirSync(postsDir).filter((file) => path.extname(file) === '.mdx')
+
+    const posts = await Promise.all(
+        mdxFiles.map(async (file) => {
+            const rawContent = fs.readFileSync(path.join(postsDir, file), 'utf-8')
+            const { metadata, content } = parseFrontmatter(rawContent)
+            const slug = path.basename(file, path.extname(file))
+            const html = await compileMarkdown(content)
+
+            return { metadata, slug, content: html }
+        })
+    )
+
+    fs.writeFileSync(outputPath, JSON.stringify(posts, null, 2))
+    console.log(`✓ Generated posts-data.json with ${posts.length} posts (pre-rendered HTML)`)
+}
+
+main()

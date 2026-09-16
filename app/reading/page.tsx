@@ -9,7 +9,6 @@ type Book = {
 }
 
 const currentlyReading: Book[] = [
-
   {
     title: 'Cigars of the Pharoah',
     author: 'Hergé',
@@ -20,30 +19,27 @@ const currentlyReading: Book[] = [
     author: 'Martin Kleppmann',
     isbn: '9781449373320',
   },
-
 ]
 
 const read: Book[] = [
-{
-  title: 'The Death of Ivan Ilyich',
-  author: 'Leo Tolstoy',
-  isbn: '9780140449617',
-  rating: 4,
-},
-{
-  title: 'Project Hail Mary',
-  author: 'Andy Weir',
-  isbn: '9780593135204',
-  rating: 5,
-},
-{
-  title: 'Red Rising',
-  author: 'Pierce Brown',
-  isbn: '9780345539809',
-  rating: 3,
-},
-
-
+  {
+    title: 'The Death of Ivan Ilyich',
+    author: 'Leo Tolstoy',
+    isbn: '9780140449617',
+    rating: 4,
+  },
+  {
+    title: 'Project Hail Mary',
+    author: 'Andy Weir',
+    isbn: '9780593135204',
+    rating: 5,
+  },
+  {
+    title: 'Red Rising',
+    author: 'Pierce Brown',
+    isbn: '9780345539809',
+    rating: 3,
+  },
 ]
 
 const wantToRead: Book[] = [
@@ -72,7 +68,6 @@ const wantToRead: Book[] = [
     author: 'Philip Freeman',
     isbn: '9781643138725',
   },
-
 ]
 
 function StarRating({ rating = 0 }: { rating?: number }) {
@@ -95,9 +90,10 @@ function BookCover({ book }: { book: Book }) {
     <div className="group relative w-32 sm:w-36 md:w-40">
       <div className="relative aspect-2/3 w-full overflow-hidden rounded-md shadow-lg">
         <Image
-          src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`}
+          src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`}
           alt={`${book.title} cover`}
           fill
+          unoptimized
           className="object-cover"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/60">
@@ -136,14 +132,11 @@ export default function Page() {
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter text-center">
         Books - Rating out of 5
       </h1>
-      <p className= 'text-center'>
-        
-      </p>
+      <p className="text-center"></p>
 
       <Shelf title="Currently Reading" books={currentlyReading} />
       <Shelf title="Want to Read" books={wantToRead} />
       <Shelf title="Read" books={read} />
-
     </section>
   )
 }

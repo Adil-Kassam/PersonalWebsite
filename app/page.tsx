@@ -4,7 +4,7 @@ import { BlogPosts } from 'app/components/posts'
 export default function Page() {
   return (
     <section>
-      <div className="relative w-full h-64 md:h-80 mb-8 -mt-2 rounded-xl overflow-hidden">
+      <div className="relative w-full aspect-4/3 sm:aspect-16/9 md:aspect-21/9 mb-8 -mt-2 rounded-xl overflow-hidden">
         <Image
           src="/adillandscape3.png"
           alt="A wide banner image"
